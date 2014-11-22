@@ -424,6 +424,8 @@ const Editor = Module("editor", {
 
         // blink the textbox after returning
         if (elem) {
+            elem.dispatchEvent(new UIEvent("input"));
+
             let colors = [tmpBg, oldBg, tmpBg, oldBg];
             (function () {
                 elem.style.backgroundColor = colors.shift();
